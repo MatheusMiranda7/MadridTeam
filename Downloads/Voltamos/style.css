@@ -1,0 +1,507 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  background-color: #fff0f5;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  background: #ff69b4;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+.sidebar {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #ffe4e1;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #a52a2a;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #ffccd5;
+}
+
+.fotos-galeria {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.foto-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presente-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.frase-presente {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #a52a2a;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  background-color: #fff0f5;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.frase-presente.animada {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mensagem {
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: 'Georgia', serif;
+}
+
+.barra-frases {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffe4e1;
+  overflow: hidden;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.frases-movendo {
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  animation: moverFrases 20s linear infinite;
+  font-size: 14px;
+  color: #a52a2a;
+  font-weight: bold;
+}
+
+@keyframes moverFrases {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Menu Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+/* Cards Home */
+.motivos {
+  margin: 3rem auto;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #a52a2a;
+  padding: 0 20px;
+}
+
+.motivos h2 {
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+}
+
+.cards-motivos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.motivo-card {
+  background-color: #fff0f5;
+  border-radius: 12px;
+  padding: 15px 20px;
+  max-width: 250px;
+  min-height: 80px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+}
+
+.motivo-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer-romantico {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffe4e1;
+  color: #a52a2a;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  margin-top: 40px;
+  border-top: 1px dashed #a52a2a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .motivo-card {
+    max-width: 90%;
+    font-size: 15px;
+  }
+}
+
+/* Depoimento */
+.depoimento {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffeaf4;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(255,105,180, 0.3);
+}
+
+/* Texto introdutório */
+.texto-romantico {
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 16px;
+  text-align: center;
+  color: #a0522d;
+}
+
+/* Container da carta */
+.carta-container {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+/* Carta */
+#carta {
+  background: #fff8dc;
+  border: 2px dashed #deb887;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  text-align: left;
+  animation: aparecer 0.7s ease;
+}
+
+/* Lista da carta */
+#carta ul {
+  margin-left: 20px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Botão com efeito pulse */
+.btn-animado {
+  padding: 14px 28px;
+  font-size: 16px;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.8s infinite;
+  transition: transform 0.3s ease;
+}
+
+.btn-animado:hover {
+  transform: scale(1.05);
+  background-color: #ff1493;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 105, 180, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
+}
+
+/* Mensagem final */
+.mensagem-final {
+  background-color: #e6ffe6;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  animation: aparecer 1s ease;
+}
+
+/* Animação de entrada */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* PG Fotos*/
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.foto-3d {
+  text-align: center;
+  perspective: 1000px;
+}
+
+.foto-3d img {
+  width: 100%;
+  height: 180px; /* altura fixa */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.5s, box-shadow 0.5s;
+  cursor: pointer;
+}
+
+
+.foto-3d img.destaque {
+  transform: scale(1.1) rotateY(5deg);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.legenda {
+  margin-top: 10px;
+  font-style: italic;
+  color: #a52a2a;
+  font-size: 14px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .legenda {
+    font-size: 13px;
+  }
+}
+
+/* Estilo base do botão */
+#ativarCarrossel {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Animação pulsante quando o carrossel estiver ativo */
+#ativarCarrossel.ativo {
+  background-color: #ff1493;
+  animation: pulso 1.2s infinite;
+}
+
+@keyframes pulso {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Layout geral */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffafc;
+  color: #333;
+}
+
+.futuro-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #d63384;
+}
+
+/* Linha do tempo */
+.timeline {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.evento {
+  background: #ffe6f0;
+  border-left: 5px solid #d63384;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.subfrase {
+  font-size: 14px;
+  color: #6a097d;
+  margin-top: 5px;
+  padding-left: 10px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Carta do futuro */
+.carta-futuro {
+  background-color: #fff0f5;
+  border: 2px dashed #ff69b4;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+/* Botões românticos */
+.btn-escolha {
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s;
+}
+
+.btn-escolha:hover {
+  transform: scale(1.05);
+}
+
+/* Previsão botão */
+.btn-estrelas {
+  background: linear-gradient(45deg, #d63384, #ffaaff);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ffccff;
+  transition: all 0.3s ease;
+}
+
+.btn-estrelas:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff99dd;
+}
+
+/* Ocultos */
+.oculto-resposta, .oculto-previsao {
+  display: none;
+  margin-top: 10px;
+  font-style: italic;
+  color: #5c0d5c;
+  animation: aparecer 1s ease;
+}
+
+#respostaEscolha:not(.oculto-resposta),
+#previsaoTexto:not(.oculto-previsao) {
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* Animações */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moverFrases {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}

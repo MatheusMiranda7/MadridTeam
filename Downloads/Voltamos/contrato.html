@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contrato de Namoro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Botão que abre o menu -->
+<div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
+
+  <!-- Menu lateral com links -->
+  <nav class="sidebar" id="sidebar">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="fotos.html"><i class="fas fa-heart"></i> Nós</a>
+    <a href="contrato.html"><i class="fas fa-file-contract"></i> Contrato</a>
+    <a href="https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=zfsroygsSRSsa8EemlvrPA" target="_blank"><i class="fas fa-music"></i> Nossa Música</a>
+    <a href="futuro.html"><i class="fas fa-star"></i> Futuro</a>
+  </nav>
+
+    <!-- Depoimento -->
+  <section class="depoimento">
+    <h3>💌 Do Matheus Miranda para o amor da minha vida</h3>
+    <p>
+      Você é a maior surpresa da minha vida, daquelas que a gente não espera, mas muda tudo. O seu sorriso é o código que reinicia meu sistema, e seu carinho é a atualização que eu nem sabia que precisava.
+    </p>
+    <h2>Sim! eu te amo mais do que o Corinthians</h2>
+  </section>
+
+  <!-- Texto antes do contrato -->
+  <div class="texto-romantico">
+    <p>
+      Abaixo está um contrato muito importante, que define os termos do nosso relacionamento... Spoiler: tem muita gracinha, risadas e amor envolvido 💖<br>
+      Mas cuidado: ao clicar em aceitar, você corre o risco de ganhar abraços infinitos, mensagens diárias dizendo “Te amo”, minhas gracinhas e beijos até nos momentos mais aleatórios 😘
+    </p>
+  </div>
+
+  <!-- Botão para abrir a carta -->
+  <div class="carta-container">
+    <button id="mostrarCarta" class="btn-animado">📜 Abrir Contrato de Namoro</button>
+
+    <!-- Carta oculta inicialmente -->
+    <div id="carta" class="oculto">
+      <h2>Contrato Oficial de Namoro 💖</h2>
+      <p>Eu, Matheus, declaro oficialmente que:</p>
+      <ul>
+        <li>❤️ Vou estar com você todos os dias que você acordar, (mesmo estando de mau-humor).</li>
+        <li>❤️ Estarei com você nos dias bons e nos dias ruins.</li>
+        <li>❤️ Seus dramas serão ouvidos (e a maioria resolvidos com chocolate de laranja).</li>
+        <li>❤️ Carinho, beijos, cafuné e massagens serão infinitos e intransferíveis (você pode retribuir tudo isso também viu).</li>
+        <li>❤️ Estarei em suas TPMs que duram o mês todo.</li>
+        <li>❤️ Todos os dias direi o quanto você é linda, mesmo descabelada, ou puta da vida comigo.</li>
+      </ul>
+      <p>Se você aceitar esses termos, clique no botão abaixo e prepare-se para viver a história de amor mais maluca e maravilhosa que já existiu! 💕</p>
+
+      <!-- Botão para aceitar o contrato -->
+      <button id="aceitarContrato" class="btn-animado">✅ Aceitar os Termos do Amor</button>
+    </div>
+
+    <!-- Mensagem final (oculta) -->
+    <div id="mensagemFinal" class="oculto mensagem-final">
+      <h3>Contrato aceito! Você fez a melhor escolha da sua vida, somos novamente um casal perfeito! 💑</h3>
+    </div>
+  </div>
+
+  <div class="barra-frases">
+    <div class="frases-movendo">
+      Nosso amor é meu lugar favorito ❤️ • Ir no mercado aquele dia foi o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os melhores momentos da minha vida com você 🧬 • Te amo mais a cada segundo que passa ⏳ •
+    </div>
+  </div>
+
+  <footer class="footer-romantico">
+    <p>Feito com Amor por Matheus, só para você!</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

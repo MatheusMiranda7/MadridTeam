@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosso Amor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+      <!-- Botão que abre o menu -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Menu lateral com links -->
+    <nav class="sidebar" id="sidebar">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="fotos.html"><i class="fas fa-heart"></i> Nós</a>
+      <a href="contrato.html"><i class="fas fa-file-contract"></i> Contrato</a>
+      <a href="https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=zfsroygsSRSsa8EemlvrPA" target="_blank"><i class="fas fa-music"></i> Nossa Música</a>
+      <a href="futuro.html"><i class="fas fa-star"></i> Futuro</a>
+    </nav>
+
+    <div class="mensagem">
+      <p>Oi, você já deve imaginar quem é…</p>
+      <p>Mas abaixo estão umas caixas que você pode abrir e ter a certeza</p>
+    </div>
+
+    <div class="fotos-galeria">
+      <div class="foto-box">
+        <button class="presente-btn">🎁</button>
+        <p class="frase-presente" hidden>Me desculpa</p>
+      </div>
+    
+      <div class="foto-box">
+        <button class="presente-btn">🎁</button>
+        <p class="frase-presente" hidden>Não vivo sem você</p>
+      </div>
+    
+      <div class="foto-box">
+        <button class="presente-btn">🎁</button>
+        <p class="frase-presente" hidden>Eu te amo</p>
+      </div>
+    </div>    
+
+  <section class="motivos">
+    <h2>10 motivos pelos quais eu te amo ❤️</h2>
+    <div class="cards-motivos">
+      <div class="motivo-card">Seu sorriso é a coisa mais linda que já vi 😁</div>
+      <div class="motivo-card">Você me entende com um olhar 🥺</div>
+      <div class="motivo-card">Seu abraço é meu lugar favorito 🤗</div>
+      <div class="motivo-card">Você faz qualquer lugar parecer meu lar, mas é porque meu lar é você 🏠</div>
+      <div class="motivo-card">Sua voz é a trilha sonora da minha alegria 🎶</div>
+      <div class="motivo-card">A forma como você cuida de mim me encanta (mesmo voce sendo bruta) 💞</div>
+      <div class="motivo-card">Quando está quieta demais fico me remoendo, se fiz algo que não tenha gostado 🤫</div>
+      <div class="motivo-card">Você transforma minha vida em algo mágico ✨</div>
+      <div class="motivo-card">Pode parecer besta mas com você eu descobri o que é realmente amar uma pessoa 😍</div>
+      <div class="motivo-card">Porque é você... sempre foi você... e sempre será você 🫶</div>
+    </div>
+  </section>
+
+  <div class="barra-frases">
+    <div class="frases-movendo">
+    Nosso amor é meu lugar favorito ❤️ • Ir no mercado aquele dia foi o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os melhores momentos da minha vida com você 🧬 • Te amo mais a cada segundo que passa ⏳ •
+    </div>
+  </div>
+ 
+  <footer class="footer-romantico">
+    <p>Feito com Amor por Matheus, só para você!</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.presente-btn').forEach(botao => {
+      botao.addEventListener('click', () => {
+        const frase = botao.nextElementSibling;
+        const visivel = !frase.hidden;
+  
+        frase.hidden = visivel;
+  
+        if (!visivel) {
+          // Garante reanimação ao reclicar
+          frase.classList.remove('animada');
+          void frase.offsetWidth; // força reflow
+          frase.classList.add('animada');
+        } else {
+          frase.classList.remove('animada');
+        }
+      });
+    });
+  </script>  
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+
+
+  <script src="script.js"></script>
+    
+</body>
+</html>

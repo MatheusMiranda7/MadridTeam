@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nossas Fotos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Botão que abre o menu -->
+<div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Menu lateral com links -->
+<nav class="sidebar" id="sidebar">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="fotos.html"><i class="fas fa-heart"></i> Nós</a>
+  <a href="contrato.html"><i class="fas fa-file-contract"></i> Contrato</a>
+  <a href="https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=zfsroygsSRSsa8EemlvrPA" target="_blank"><i class="fas fa-music"></i> Nossa Música</a>
+  <a href="futuro.html"><i class="fas fa-star"></i> Futuro</a>
+</nav>
+
+  <main class="gallery">
+  <h2>Nossas Memórias 📸</h2>
+  <div class="photo-grid" id="galeriaNos"></div>
+  <button id="ativarCarrossel" style="margin: 60px;">🌠 Ativar Modo Carrossel</button>
+</main>
+
+<script>
+  const galeria = document.getElementById("galeriaNos");
+  const legendas = [
+    "Cada sorriso seu vale mais que qualquer pôr do sol 🌅",
+    "Estar com você é a definição de felicidade 🍀",
+    "Teu olhar acalma até os dias mais turbulentos 🌊",
+    "Se amar fosse arte, você seria meu quadro favorito 🎨",
+    "Te ter é como ganhar na loteria todos os dias 💰",
+    "Você é poesia em forma de abraço 💞",
+    "Nos seus braços encontrei meu lar 🏡",
+    "Seu sorriso é meu lugar seguro 🫶",
+    "Amar você é minha rotina favorita ☀️",
+    "Nosso amor é a melhor história que já vivi 📖",
+    "Entre todas as escolhas do mundo, eu escolheria você 🌍",
+    "Você é meu ponto de paz em meio ao caos 🌈",
+    "Com você, até o silêncio tem som de amor 🎶",
+    "Seu toque cura qualquer tristeza 🌟",
+    "Teu beijo tem sabor de eternidade 💋",
+    "Você é meu destino preferido ✈️",
+    "A vida é mais bonita com você nela 🌹",
+    "Você me completa de um jeito que nem sei explicar 💬",
+    "Com você aprendi o que é amar de verdade ❤️",
+    "Somos poesia e loucura na medida certa 📝",
+    "Meu coração só sabe bater por você 💓",
+    "Seus olhos são minha bússola ✨",
+    "Você é meu sonho que virou realidade 💤",
+    "Estar com você é como viver um filme romântico 🎥",
+    "Você faz até os dias nublados brilharem 🌤️",
+    "Cada momento com você é um presente 🎁",
+    "Nosso amor é minha força diária 💪",
+    "Você é a resposta de todas as minhas orações 🙏",
+    "Com você o mundo fica mais leve 🌎",
+    "A eternidade começa com um 'sim' seu 💍"
+  ];
+
+  let carrosselAtivo = false;
+  let intervalo;
+  let indiceAtual = 0;
+
+  // Monta as imagens na galeria
+  for (let i = 1; i <= 30; i++) {
+    const box = document.createElement("div");
+    box.className = "foto-3d";
+    box.innerHTML = `
+      <img src="images/nos${i}.jpg" alt="Foto ${i}">
+      <p class="legenda" id="legenda${i}"></p>
+    `;
+    galeria.appendChild(box);
+  }
+
+  // Adiciona o clique às imagens APÓS estarem no DOM
+  document.querySelectorAll('.foto-3d img').forEach((img, idx) => {
+    img.addEventListener('click', () => {
+      pararCarrossel();
+      destacarFoto(img, legendas[idx]);
+    });
+  });
+
+  // Função para destacar imagem e legenda
+  function destacarFoto(img, texto) {
+    document.querySelectorAll('.foto-3d img').forEach(f => f.classList.remove('destaque'));
+    img.classList.add('destaque');
+
+    document.querySelectorAll('.legenda').forEach(l => l.innerText = "");
+    img.nextElementSibling.innerText = texto;
+  }
+
+  // Botão do carrossel
+  document.getElementById("ativarCarrossel").addEventListener("click", () => {
+    carrosselAtivo ? pararCarrossel() : iniciarCarrossel();
+  });
+
+  function iniciarCarrossel() {
+    carrosselAtivo = true;
+    const botao = document.getElementById("ativarCarrossel");
+    botao.innerText = "⏹️ Parar Carrossel";
+    botao.classList.add("ativo");
+
+    const imagens = document.querySelectorAll('.foto-3d img');
+    intervalo = setInterval(() => {
+      imagens.forEach(img => img.classList.remove("destaque"));
+      document.querySelectorAll(".legenda").forEach(l => l.innerText = "");
+
+      const atual = imagens[indiceAtual];
+      atual.classList.add("destaque");
+      atual.nextElementSibling.innerText = legendas[indiceAtual];
+
+      indiceAtual = (indiceAtual + 1) % imagens.length;
+    }, 3000);
+  }
+
+  function pararCarrossel() {
+    carrosselAtivo = false;
+    const botao = document.getElementById("ativarCarrossel");
+    botao.innerText = "🌠 Ativar Modo Carrossel";
+    botao.classList.remove("ativo");
+    clearInterval(intervalo);
+  }
+</script>
+
+
+  <div class="barra-frases">
+    <div class="frases-movendo">
+      Nosso amor é meu lugar favorito ❤️ • Ir no mercado aquele dia foi o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os melhores momentos da minha vida com você 🧬 • Te amo mais a cada segundo que passa ⏳ •
+    </div>
+  </div>
+
+  <footer class="footer-romantico">
+    <p>Feito com Amor por Matheus, só para você!</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

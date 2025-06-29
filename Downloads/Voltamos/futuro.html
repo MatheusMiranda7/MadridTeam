@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosso Futuro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Botão que abre o menu -->
+<div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
+
+  <!-- Menu lateral com links -->
+  <nav class="sidebar" id="sidebar">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="fotos.html"><i class="fas fa-heart"></i> Nós</a>
+    <a href="contrato.html"><i class="fas fa-file-contract"></i> Contrato</a>
+    <a href="https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=zfsroygsSRSsa8EemlvrPA" target="_blank"><i class="fas fa-music"></i> Nossa Música</a>
+    <a href="futuro.html"><i class="fas fa-star"></i> Futuro</a>
+  </nav>
+
+<main class="futuro-container">
+  <h1>O que o Futuro Reserva pra Gente? 🔮</h1>
+
+  <!-- Linha do tempo -->
+  <section class="timeline">
+    <div class="evento">
+        <strong>2025</strong> - Nosso reencontro mais lindo 🌅  
+        <p class="subfrase">Nos reencontramos na casa da minha avó e minha atenção estava toda voltada em cada detalhe seu.</p>
+    </div>
+    
+    <div class="evento">
+        <strong>2025/2</strong> - Vamos morar juntos amanhã já! 🏡  
+        <p class="subfrase">Desde o primeiro café da manhã juntos em janeiro até o nosso cantinho decorado no Natal para o resto da vida.</p>
+    </div>
+
+    <div class="evento">
+        <strong>2026</strong> - Um pedido de casamento de tirar o fôlego 💍  
+        <p class="subfrase">Eu maluco da cabeça, planejando mês a mês. A cada semana, eu observo uma nova pista de que o “sim” estava mais perto do que nunca.</p>
+    </div>
+
+    <div class="evento">
+        <strong>2027</strong> - Viagem para aquele lugar que sempre sonhamos (Suiça) ✈️  
+        <p class="subfrase">Este foi o ano de algumas descobertas, descobrimos muitos lugares pelo mundo e colecionamos lembranças únicas.</p>
+    </div>
+
+    <div class="evento">
+        <strong>2028</strong> - Nosso Dog chegando, um puta Cane Corso (e seu gato noia pelado) 🐾  
+        <p class="subfrase">Os integrantes da nossa casa aumentou depois da chegada deles. Latidos, miados e brigas entre os dois.</p>
+    </div>
+
+    <div class="evento">
+        <strong>2029+</strong> - Viver lado a lado, sorrindo todos os dias 💘  
+        <p class="subfrase">Com o tempo, a gente aprendeu que o futuro não é sobre onde vamos, mas com quem vamos. E eu escolho você, sempre.</p>
+    </div>
+  </section>
+
+  <!-- Carta do futuro -->
+  <section class="carta-futuro">
+    <h2>Uma Carta de 2035 📝</h2>
+    <p>
+      "Amor, passaram-se 10 anos desde que escrevi esse site. Hoje, estou escrevendo ao seu lado, e seguimos juntos — rindo, sonhando e nos apoiando.  
+      Ainda lembro da sensação do seu abraço naquele dia... e nunca mais quis sair dele.  
+      Te amo cada dia mais, e isso nunca mudou. Obrigado por dizer sim lá atrás. Você é minha melhor decisão."  
+      <br><br>– Com todo amor, Matheus do futuro 💌
+    </p>
+  </section>
+
+  <!-- Escolha romântica -->
+  <section class="escolha-romantica">
+    <h2>Se você pudesse escolher, viveria tudo isso comigo? ❤️</h2>
+    <div class="botoes-escolha">
+      <button class="btn-escolha" id="btnSim">Sim, mil vezes sim!</button>
+      <button class="btn-escolha" id="btnClaro">Claro, nem precisava perguntar!</button>
+    </div>
+    <p id="respostaEscolha" class="oculto-resposta"></p>
+  </section>
+
+  <!-- Previsão das estrelas -->
+  <section class="estrelas-futuro">
+    <button class="btn-estrelas" id="verPrevisao">✨ Ver Previsão das Estrelas</button>
+    <p id="previsaoTexto" class="oculto-previsao"></p>
+  </section>
+</main>
+
+<!-- Frases rodando -->
+<div class="barra-frases">
+  <div class="frases-movendo">
+    Nosso amor é meu lugar favorito ❤️ • Ir no mercado aquele dia foi o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os melhores momentos da minha vida com você 🧬 • Te amo mais a cada segundo que passa ⏳ •
+  </div>
+</div>
+
+<footer class="footer-romantico">
+    <p>Feito com Amor por Matheus, só para você!</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const sidebar = document.getElementById('sidebar');
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+
+  document.getElementById('btnSim').addEventListener('click', () => {
+    document.getElementById('respostaEscolha').innerText = "Você acabou de me dar o futuro mais feliz de todos! 💖";
+    document.getElementById('respostaEscolha').classList.remove('oculto-resposta');
+  });
+
+  document.getElementById('btnClaro').addEventListener('click', () => {
+    document.getElementById('respostaEscolha').innerText = "Você é o meu destino mais bonito! 💞";
+    document.getElementById('respostaEscolha').classList.remove('oculto-resposta');
+  });
+
+  document.getElementById('verPrevisao').addEventListener('click', () => {
+    document.getElementById('previsaoTexto').innerText = "As estrelas dizem: vocês nasceram para sorrir juntos. Preparem-se, o universo está só começando a conspirar a favor desse amor. ✨💑";
+    document.getElementById('previsaoTexto').classList.remove('oculto-previsao');
+  });
+</script>
+
+</body>
+</html>
